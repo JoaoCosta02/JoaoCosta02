@@ -1,0 +1,71 @@
+<!DOCTYPE HTML>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA_Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-escale=1.0">
+    <link rel="icon" href="png/icone.png" type="image/png" />
+    <link rel="stylesheet" href="estilo.css">
+    <title>Formulario de Cadastro</title>
+    <script>
+        function mascara_cpf(){
+            var cpf = document.getElementById('cpf')
+            if(cpf.value.length == 3 || cpf.value.length == 7){
+                cpf.value +="."
+            } else if(cpf.value.length == 11) {
+                cpf.valeu +="."
+            }
+        }
+        function mascara_rg(){
+            var rg = document.getElementById('rg')
+            if(rg.value.length == 2 || rg.value.length == 6){
+                rg.value +="."
+            } else if(rg.value.length == 11) {
+                rg.valeu +="."
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="form">
+        <form method="post" action="Pagina.html"><br>
+            <h1>Sistema do Cliente</h1><br>
+            <h2>Cadastro</h2><br><br>
+            <label for="nome">Nome</label>
+            <input type="text" size="40" placeholder="NomeCompleto" required>
+            <label for="cpf">CPF</label>
+            <input type="text" id="cpf" placeholder="123.456.789-12" autocomplete="off" maxlength="14" onkeyup="mascara_cpf()" required><br><br>
+            <label for="email">Email</label>
+            <input type="text" size="40" placeholder="Email Valido" required>
+            <label for="RG">RG</label>
+            <input type="text" id="rg" placeholder="12.345.678-9" autocomplete="off" maxlength="12" onkeyup="mascara_rg()" required><br><br>
+            <label for="sexo">Sexo: </label> &nbsp;
+            <label for="mas">Masculino</label> 
+            <input type="radio" name="opcao" id="op1" required>
+            <label for="fem">Femenino</label>
+            <input type="radio" name="opcao" id="op1" required>
+            <label for="outro">Outros</label>
+            <input type="radio" name="opcao" id="op1" required><br><br>
+            <label for="date">Data de Nascimento:</label>
+            <input type="date" name="Data nascimento" id="date" required><br><br>
+            <h2>Endereço</h2><br>
+            <label for="cidade">Cidade</label>
+            <input type="text" placeholder="Cidade" required><br><br>
+            <label for="cep">CEP</label>
+            <input type="text" placeholder="12345-678" maxlength="10" required><br><br>
+            <label for="bairro">Bairro</label>
+            <input type="text" placeholder="Bairro" required><br><br>
+            <label for="rua">Rua</label>
+            <input type="text" size="30" placeholder="Logradouro" required><br><br>
+            <label for="nu">Numero</label>
+            <input type="text" size="5" placeholder="Numero" required><br><br>
+            <label for="comp">Complemento</label>
+            <input type="text" size="30" placeholder="Complemento"><br><br>
+            <label for="">Criar Senha</label>
+            <input id="password" name="password" placeholder="Password" type="password"><br><br>
+            <input type="submit" value="Cadastrar">
+            <input type="button" onclick="window.location.href ='Pagina.html'" value="Voltar">
+        </form>
+    </div>
+</body>
+</html>
